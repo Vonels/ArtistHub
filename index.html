@@ -5,23 +5,75 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArtistHub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;1,700&family=IBM+Plex+Sans:ital,wdth,wght@0,75..100,100..700;1,75..100,100..700&family=Roboto:ital,wght@0,700;1,700&display=swap" 
-rel="stylesheet">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;1,700&family=IBM+Plex+Sans:ital,wdth,wght@0,75..100,100..700;1,75..100,100..700&family=Roboto:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/ProjectGroup/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/ProjectGroup/assets/index-BfwwidFV.css">
+    <link rel="modulepreload" crossorigin href="/ProjectGroup/assets/vendor-Di-HgT5n.js">
+    <link rel="stylesheet" crossorigin href="/ProjectGroup/assets/index-B_5tRrjP.css">
   </head>
   <body>
     
     <main>
       
+      <section class="artist-section">
+  <h2 class="section-title">Artists</h2>
+
+  <h3 class="section-subtitle">Explore Your New Favorite Artists</h3>
+
+  <ul class="artists-list"></ul>
+
+  <button type="button" class="artists-load-more-btn is-hidden">
+    Load More
+  </button>
+
+  <span class="artists-loader is-hidden">Loading Artists....</span>
+</section>
+
       
       
-      
-      
+      <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<section class="feedback-section">
+  <h2 class="is-hidden">Feedbacks our visitors</h2>
+
+  <div class="swiper feedback-slider">
+    <div class="swiper-wrapper"></div>
+
+    <div class="slider-navigation-wrapper">
+      <button
+        type="button"
+        class="swiper-button-prev feedback-prev-btn"
+        aria-label="Попередній відгук"
+      ></button>
+
+      <div class="swiper-pagination feedback-pagination"></div>
+
+      <button
+        type="button"
+        class="swiper-button-next feedback-next-btn"
+        aria-label="Наступний відгук"
+      ></button>
+    </div>
+  </div>
+
+  <button type="button" class="feedback-submit-btn">Leave feedback</button>
+</section>
+
       
     </main>
     
+  </body>
 </html>
