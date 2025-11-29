@@ -1,26 +1,26 @@
-import{i as d,a as h,S as y}from"./assets/vendor-CYE3kvfv.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const n of r)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function t(r){const n={};return r.integrity&&(n.integrity=r.integrity),r.referrerPolicy&&(n.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?n.credentials="include":r.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(r){if(r.ep)return;r.ep=!0;const n=t(r);fetch(r.href,n)}})();const L=document.querySelector(".artists-list"),f=document.querySelector(".artists-loader"),m=document.querySelector(".artists-load-more-btn");function w(){f.classList.remove("is-hidden")}function A(){f.classList.add("is-hidden")}function $(){m.classList.remove("is-hidden")}function c(){m.classList.add("is-hidden")}function k(e){return!Array.isArray(e)||e.length===0?"":`<div class="artist-genres">${e.map(t=>`<span class="genre-tag">${t}</span>`).join("")}</div>`}function v(e){const s=e.map(t=>{const o=t.strBiographyEN||"";return`
+import{i as u,a as L,S as M}from"./assets/vendor-CYE3kvfv.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const n of r)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function e(r){const n={};return r.integrity&&(n.integrity=r.integrity),r.referrerPolicy&&(n.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?n.credentials="include":r.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(r){if(r.ep)return;r.ep=!0;const n=e(r);fetch(r.href,n)}})();const a={headerBtnOpenMenu:document.querySelector(".header-button-menu"),headerBtnCloseMenu:document.querySelector(".button-close"),mobileMenu:document.querySelector(".menu-drive")},m=()=>{a.mobileMenu.classList.toggle("is-open"),document.body.classList.toggle("no-scroll")};a.headerBtnOpenMenu&&a.mobileMenu&&a.headerBtnOpenMenu.addEventListener("click",m);a.headerBtnCloseMenu&&a.mobileMenu&&a.headerBtnCloseMenu.addEventListener("click",m);const w=document.querySelector(".artists-list"),b=document.querySelector(".artists-loader"),g=document.querySelector(".artists-load-more-btn");function A(){b.classList.remove("is-hidden")}function k(){b.classList.add("is-hidden")}function v(){g.classList.remove("is-hidden")}function l(){g.classList.add("is-hidden")}function $(t){return!Array.isArray(t)||t.length===0?"":`<div class="artist-genres">${t.map(e=>`<span class="genre-tag">${e}</span>`).join("")}</div>`}function B(t){const s=t.map(e=>{const o=e.strBiographyEN||"";return`
                 <li class="artist-card">
                     <img 
                         class="img-card"
-                        src="${t.strArtistThumb||""}" 
-                        alt="${t.strArtist||"Artist Photo"}" 
+                        src="${e.strArtistThumb||""}" 
+                        alt="${e.strArtist||"Artist Photo"}" 
                         loading="lazy"
                     >
 
-                    ${k(t.genres)}
+                    ${$(e.genres)}
 
-                    <h3 class="artist-name">${t.strArtist}</h3>
+                    <h3 class="artist-name">${e.strArtist}</h3>
 
                     ${o?`<p class="artist-short-info">${o}</p>`:""}
                     
                     <button 
                         class="learn-more-btn"
-                        data-artist-id="${t._id}"
+                        data-artist-id="${e._id}"
                     >
                         Learn More
                     </button>
                 </li>
-            `}).join("");L.insertAdjacentHTML("beforeend",s)}const M="https://sound-wave.b.goit.study",b=8;async function E(e=1){const s={limit:b,page:e};try{return(await h.get(`${M}/api/artists`,{params:s})).data}catch(t){throw t}}const S=document.querySelector(".artists-load-more-btn");let l=1,u=0;async function g(){w(),c();try{const e=await E(l),s=e.artists,t=e.totalArtists;if(u=Math.ceil(t/b),v(s),s.length===0){d.error({title:"Поиск не дал результатов",message:"К сожалению, по вашему запросу артистов не найдено.",position:"topRight"});return}l<u?$():c()}catch(e){d.error({title:"Ошибка",message:`Ошибка запроса: ${e.message}`,position:"topRight"}),c()}finally{A()}}S.addEventListener("click",async()=>{l+=1,await g()});g();const B="https://sound-wave.b.goit.study/api",P="/feedbacks",T=`${B}${P}`,a=document.querySelector(".swiper-wrapper"),p=document.querySelector(".feedback-submit-btn");function q({name:e,feedback:s,rating:t}){const o=Math.round(t);return`<div class="swiper-slide feedback-card">
+            `}).join("");w.insertAdjacentHTML("beforeend",s)}const S="https://sound-wave.b.goit.study",h=8;async function E(t=1){const s={limit:h,page:t};try{return(await L.get(`${S}/api/artists`,{params:s})).data}catch(e){throw e}}const P=document.querySelector(".artists-load-more-btn");let d=1,p=0;async function y(){A(),l();try{const t=await E(d),s=t.artists,e=t.totalArtists;if(p=Math.ceil(e/h),B(s),s.length===0){u.error({title:"Поиск не дал результатов",message:"К сожалению, по вашему запросу артистов не найдено.",position:"topRight"});return}d<p?v():l()}catch(t){u.error({title:"Ошибка",message:`Ошибка запроса: ${t.message}`,position:"topRight"}),l()}finally{k()}}P.addEventListener("click",async()=>{d+=1,await y()});y();const q="https://sound-wave.b.goit.study/api",T="/feedbacks",O=`${q}${T}`,i=document.querySelector(".swiper-wrapper"),f=document.querySelector(".feedback-submit-btn");function R({name:t,feedback:s,rating:e}){const o=Math.round(e);return`<div class="swiper-slide feedback-card">
         <div class="star-rating-container">
             ${"⭐".repeat(o)}
         </div>
@@ -28,9 +28,9 @@ import{i as d,a as h,S as y}from"./assets/vendor-CYE3kvfv.js";(function(){const 
             "${s}"
         </p>
         <p class="feedback-author">
-            ${e}
+            ${t}
         </p>
         <button type="button" class="feedback-submit-btn">Leave feedback</button>
     </div>
-    `}function R(e){new y(".feedback-slider",{slidesPerView:1,loop:!0,spaceBetween:30,navigation:{nextEl:".feedback-next-btn",prevEl:".feedback-prev-btn"},pagination:{el:".feedback-pagination",clickable:!0,renderBullet:function(s,t){return s===0?`<span class="${t} pagination-start" aria-label="Go to first slide"></span>`:s===e-1?`<span class="${t} pagination-end" aria-label="Go to last slide"></span>`:`<span class="${t} pagination-middle" aria-label="Go to slide ${s+1}"></span>`}}})}function O(){console.log("Модальне вікно для фідбеку має відкритися тут!")}function _(){O()}p&&p.addEventListener("click",_);async function j(){if(!a){console.error("Swiper wrapper element not found.");return}try{const e=await fetch(T);if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);let s=await e.json();if(!Array.isArray(s)||s.length===0){a.innerHTML='<p class="no-feedback-message">Наразі відгуків немає.</p>';return}const t=s.slice(0,10),o=t.map(q).join("");a.innerHTML=o,R(t.length)}catch(e){console.error("Помилка при отриманні відгуків:",e),a.innerHTML='<p class="error-message">Не вдалося завантажити відгуки. Спробуйте пізніше.</p>'}}j();const F=document.querySelector(".submit-modal"),G=document.querySelector(".submit-button_modal");function H(){F.classList.remove("is-open")}G.addEventListener("click",H);
+    `}function _(t){new M(".feedback-slider",{slidesPerView:1,loop:!0,spaceBetween:30,navigation:{nextEl:".feedback-next-btn",prevEl:".feedback-prev-btn"},pagination:{el:".feedback-pagination",clickable:!0,renderBullet:function(s,e){return s===0?`<span class="${e} pagination-start" aria-label="Go to first slide"></span>`:s===t-1?`<span class="${e} pagination-end" aria-label="Go to last slide"></span>`:`<span class="${e} pagination-middle" aria-label="Go to slide ${s+1}"></span>`}}})}function C(){console.log("Модальне вікно для фідбеку має відкритися тут!")}function j(){C()}f&&f.addEventListener("click",j);async function F(){if(!i){console.error("Swiper wrapper element not found.");return}try{const t=await fetch(O);if(!t.ok)throw new Error(`HTTP error! status: ${t.status}`);let s=await t.json();if(!Array.isArray(s)||s.length===0){i.innerHTML='<p class="no-feedback-message">Наразі відгуків немає.</p>';return}const e=s.slice(0,10),o=e.map(R).join("");i.innerHTML=o,_(e.length)}catch(t){console.error("Помилка при отриманні відгуків:",t),i.innerHTML='<p class="error-message">Не вдалося завантажити відгуки. Спробуйте пізніше.</p>'}}F();const G=document.querySelector(".submit-modal"),H=document.querySelector(".submit-button_modal");function I(){G.classList.remove("is-open")}H.addEventListener("click",I);
 //# sourceMappingURL=index.js.map
