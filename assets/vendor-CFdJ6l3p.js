@@ -9,4 +9,4 @@ It can be › `+u);return}a||window.innerWidth<=h?f.position=="bottomLeft"||f.po
         rotateZ(${r.rotate?c?-A:A:0}deg)
         scale(${L})
       `;if(r.slideShadows){let P=d.querySelector(".swiper-slide-shadow");P||(P=Pe("cards",d)),P&&(P.style.opacity=Math.min(Math.max((Math.abs(m)-.5)/.5,0),1))}d.style.zIndex=-Math.abs(Math.round(l))+a.length;const T=Ge(r,d);T.style.transform=M}},setTransition:a=>{const o=e.slides.map(c=>Ee(c));o.forEach(c=>{c.style.transitionDuration=`${a}ms`,c.querySelectorAll(".swiper-slide-shadow").forEach(r=>{r.style.transitionDuration=`${a}ms`})}),ot({swiper:e,duration:a,transformElements:o})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:e.params.cardsEffect.rotate?3:2,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}const rr=[Ra,Da,wa,ka,Na,Ba,$a,Ha,Fa,_a,Ga,Xa,qa,Va,Wa,ja,Qa,er,tr,nr,sr,ir,ar];ae.use(rr);export{ae as S,j as a,or as i};
-//# sourceMappingURL=vendor-CYE3kvfv.js.map
+//# sourceMappingURL=vendor-CFdJ6l3p.js.map
