@@ -2,19 +2,19 @@ import{a as S,S as K}from"./assets/vendor-4ycomzgc.js";(function(){const t=docum
     <span id="bio-text">${s?n:e}</span>
     ${s?`<button id="bio-toggle" class="bio-toggle-btn">
               <svg class="modal-icon" width="20" height="20">
-                <use href="../img/sprite.svg#icon-dots-horizontal"></use>
+                <use href="/img/sprite.svg#icon-dots-horizontal"></use>
               </svg>
            </button>`:""}
   `}function oe(e){const t=document.querySelector("#bio-toggle"),s=document.querySelector("#bio-text");if(!t)return;let n=!1;t.addEventListener("click",()=>{n=!n,n?(s.textContent=e,t.innerHTML=`
         <svg class="modal-icon" width="20" height="20">
-          <use href="../img/sprite.svg#icon-modal-up"></use>
+          <use href="/img/sprite.svg#icon-modal-up"></use>
         </svg>`):(s.textContent=e.slice(0,250),t.innerHTML=`
         <svg class="modal-icon" width="20" height="20">
-          <use href="../img/sprite.svg#icon-dots-horizontal"></use>
+          <use href="/img/sprite.svg#icon-dots-horizontal"></use>
         </svg>`)})}const ie=S.create({baseURL:"https://sound-wave.b.goit.study/api"});async function re(e){try{te();const t=document.querySelector(".modal-overlay"),s=document.querySelector(".modal");document.body.classList.add("modal-open"),s.innerHTML="",t.classList.add("is-open");const{data:n}=await ie.get(`/artists/${e}/albums`);ae(n)}catch(t){console.error("Error loading artist:",t)}finally{se()}}let f=1;const D=8;let I=[];function ae(e){const{strArtistThumb:t,strArtist:s,intFormedYear:n,intDiedYear:o,genres:a,strGender:c,intMembers:i,strCountry:r,strBiographyEN:l,albumsList:u}=e;I=u||[],f=1;const p=document.querySelector(".modal"),V=(a==null?void 0:a.map(J=>`<span>${J}</span>`).join(" "))||"";p.innerHTML=`
     <button class="btn-exit" type="button">
       <svg class="modal-icon-exit" width="20" height="20">
-        <use href="../img/sprite.svg#icon-close"></use>
+        <use href="/img/sprite.svg#icon-close"></use>
       </svg>
     </button>
 
@@ -52,7 +52,7 @@ import{a as S,S as K}from"./assets/vendor-4ycomzgc.js";(function(){const t=docum
           <span class="time">${W(o.intDuration)}</span>
           ${o.movie?`<a href="${o.movie}" class="yt-btn" target="_blank">
                     <svg class="modal-icon-yt" width="20" height="20">
-                      <use href="../img/sprite.svg#icon-YouTube"></use>
+                      <use href="/img/sprite.svg#icon-YouTube"></use>
                     </svg>
                 </a>`:""}
         </li>`).join(""))||"<li>No tracks found</li>";return`
